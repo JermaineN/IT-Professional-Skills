@@ -30,6 +30,7 @@ public class mathsProject
 		//displays message
 
 		System.out.println("Welcome to snakes and ladders!\n");
+	}
 
 		
 	public static void board(String[][] display, int one, int two)
@@ -164,6 +165,27 @@ public class mathsProject
 					two = -11;
 				}
 			}
+
+			//prints the board
+			for (int j = 0; j < display[0].length; j++)
+			{
+				if (i == 9 && j != 0 && j != 2)
+				{
+					System.out.print(display[i][j]+"   ");
+				}
+				else if (i == 0 && j == 0)
+				{
+					System.out.print(display[i][j]+" ");
+				}
+				else
+				{
+					System.out.print(display[i][j]+"  ");
+				}
+			}
+			System.out.println();
+		}
+		line();
 	}
+
 
 }
