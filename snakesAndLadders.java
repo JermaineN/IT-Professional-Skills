@@ -30,6 +30,66 @@ public class snakesAndLadders
 		//displays message
 
 		System.out.println("Welcome to snakes and ladders!\n");
+
+		do
+		{
+			System.out.println("Turn: "+ ++turn);
+			line();
+			System.out.println("Player 1");
+			p1 = total(p1);
+			if (p1 >= 100)
+			{
+				p1 = 100;
+				break;
+			}
+			sleep(700);
+
+			System.out.println("You are on number: "+p1);
+			sleep(2000);
+			System.out.println("\nThe new positions are: ");
+			board(display, p1, p2);
+
+			System.out.println("Player 2");
+			p2 = total(p2);
+			if (p2 > 100)
+			{
+				p2 = 100;
+				break;
+			}
+			sleep(700);
+
+			System.out.println("You are in position: "+p2);
+			sleep(2000);
+			System.out.println("\nThe new positions are: ");
+			board(display, p1, p2);
+
+			if (p1 > p2)
+			{
+				System.out.println("Player 1 is in the lead!");
+			}
+			else if (p1 < p2)
+			{
+				System.out.println("Player 2 is in the lead!");
+			}
+			else
+			{
+				System.out.println("Both players are tied");
+			}
+			sleep(1500);
+			System.out.println();
+
+		}
+		while (p1 != 100 || p2 != 100);
+
+		if (p1==100)
+		{
+			System.out.println("Player 1 Wins!!!");
+		}
+
+		else
+		{
+			System.out.println("Player 2 Wins!!!");
+		}
 	}
 
 		
