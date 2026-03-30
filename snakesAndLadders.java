@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.lang.Thread;
 
-public class snakesAndLaddersProject
+public class snakesAndLadders
 {
 	//creates the necessary objects
 	static Random r = new Random();
