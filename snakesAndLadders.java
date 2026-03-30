@@ -187,5 +187,12 @@ public class mathsProject
 		line();
 	}
 
+	public static int player(int die)
+	{
+		//rolls a random number for the die
+		die = r.nextInt(6)+1;
+		return die;
+	}
+
 
 }
