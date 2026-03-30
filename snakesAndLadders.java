@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.lang.Thread;
 
-public class mathsProject
+public class snakesAndLaddersProject
 {
 	//creates the necessary objects
 	static Random r = new Random();
@@ -192,6 +192,132 @@ public class mathsProject
 		//rolls a random number for the die
 		die = r.nextInt(6)+1;
 		return die;
+	}
+
+	//asks the user to roll
+	public static int roll()
+	{
+		boolean confirm = false;
+		String con = "";
+		do
+		{
+			System.out.print("Type 'Roll' or 'R' to roll the die: ");
+			con = kb.nextLine();
+			if (con.equalsIgnoreCase("Roll") || con.equalsIgnoreCase("R"))
+			{
+				confirm = true;
+			}
+
+		}
+		while (confirm == false);
+		int roll = 0;
+		roll = player(roll);
+		return roll;
+	}
+	//totals the space the player is on
+	public static int total(int spaces)
+	{
+		int roll = roll();
+		System.out.println("The number rolled was: "+roll);
+		spaces += roll;
+		return spaces;
+	}
+
+
+
+	//prints a line
+	public static void line()
+	{
+		System.out.println("*****************************************************");
+	}
+
+	public static void sleep(int time)
+	{
+		try
+		{
+			Thread.sleep(time);
+		}
+		catch (InterruptedException e)
+		{
+			e.printStackTrace();
+        }
+	}
+
+	public static int snake(int pos)
+	{
+		if (pos == (2))
+		{
+			pos = (47);
+			System.out.println("Oh no... you slid down a snake!\nYour new position is "+(100-pos));
+			sleep(700);
+		}
+
+		else if (pos == (13))
+		{
+			pos = (35);
+			System.out.println("Oh no... you slid down a snake!\nYour new position is "+(100-pos));
+			sleep(700);
+		}
+
+		else if (pos == (49))
+		{
+			pos = (65);
+			System.out.println("Oh no... you slid down a snake!\nYour new position is "+(100-pos));
+			sleep(700);
+		}
+
+		else if (pos == (51))
+		{
+			pos = (88);
+			System.out.println("Oh no... you slid down a snake!\nYour new position is "+(100-pos));
+			sleep(700);
+		}
+		else if (pos == (79))
+		{
+			pos = (92);
+			System.out.println("Oh no... you slid down a snake!\nYour new position is "+(100-pos));
+			sleep(700);
+		}
+		return pos;
+	}
+
+	public static int ladder(int pos)
+	{
+		if (pos == (93))
+		{
+			pos = (87);
+			System.out.println("You climbed a ladder!\nYour new position is "+(100-pos));
+			sleep(700);
+		}
+
+		else if (pos == (89))
+		{
+			pos = (27);
+			System.out.println("You climbed a ladder!\nYour new position is "+(100-pos));
+			sleep(700);
+		}
+
+		else if (pos == (64))
+		{
+			pos = (42);
+			System.out.println("You climbed a ladder!\nYour new position is "+(100-pos));
+			sleep(700);
+		}
+
+		else if (pos == (72))
+		{
+			pos = (51);
+			System.out.println("You climbed a ladder!\nYour new position is "+(100-pos));
+			sleep(700);
+		}
+
+		else if (pos == (40))
+		{
+			pos = (9);
+			System.out.println("You climbed a ladder!\nYour new position is "+(pos));
+			sleep(700);
+		}
+		return pos;
 	}
 
 
