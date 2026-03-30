@@ -79,6 +79,91 @@ public class mathsProject
 		display[0][9] = "@5";
 
 
+		//prints the board and player positions
+		for (int i = 0; i < display.length; i++)
+		{
+			if (one == two)
+			{
+				obj = 1;
+			}
+
+			//identifies the position of player one
+			if (one != -11)
+			{
+				//gets the row number
+				if (one/10 > 0)
+				{
+					//gets the column number
+					int check = one%10;
+					if (check == 0)
+					{
+						display[(one/10)-1][9] = ""+(-1);
+					}
+					else
+					{
+						display[one/10][check-1] = ""+(-1);
+					}
+
+					//makes 'one' equal to -11 to prevent continuous replacements
+					one = -11;
+				}
+				else
+				{
+					//positions player one
+					display[0][one - 1] = ""+(-1);
+					one = -11;
+				}
+			}
+
+			//identifies the position of player two
+			if (two != -11)
+			{
+				//gets the row number
+				if (two/10 > 0)
+				{
+					//gets the column number
+					int check = two%10;
+					//if player one and two are on the same spot, makes the icon '-3'
+					if (obj == 1)
+					{
+						if (check == 0)
+						{
+							display[(two/10)-1][9] = ""+(-3);
+						}
+						else
+						{
+							display[two/10][check-1] = ""+(-3);
+						}
+					}
+					else
+					{
+						if (check == 0)
+						{
+							display[(two/10)-1][9] = ""+(-2);
+						}
+						else
+						{
+							display[two/10][check-1] = ""+(-2);
+						}
+					}
+					//makes 'two' equal to -11 to prevent continuous replacements
+					two = -11;
+				}
+				else
+				{
+					//positions player two
+					//if player one and two are on the same spot, makes the icon '-3'
+					if (obj == 1)
+					{
+						display[0][two - 1] = ""+(-3);
+					}
+					else
+					{
+						display[0][two - 1] = ""+(-2);
+					}
+					two = -11;
+				}
+			}
 	}
 
 }
